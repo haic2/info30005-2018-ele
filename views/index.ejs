@@ -2,15 +2,49 @@
 <html lang="en">
 <head>
  <style>
-     .background{
-         background: url("https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ce6fb7bf72bd9edea947fa790aae851&auto=format&fit=crop&w=634&q=80");
+     .button {
+         background-color: blue;
+         color: white;
+         border: none;
+         padding: 4px 8px;
+         border-radius: 12px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         transition-duration: 0.4s;
+         cursor: pointer;
      }
+     .button:hover {
+         background-color: dodgerblue;
+         color: white;
+     }
+
+
+     body{
+         background-image: url("banner-bg.jpg" );
+         background-repeat: no-repeat;
+         background-size:110% 100%;
+         background-attachment: fixed;
+     }
+     #big{
+         font-family: cursive;
+         font-size: 500%;
+         color:blue;
+     }
+     #small{
+         font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font-size: 300%;
+
+     }
+
      div.position{
          position: absolute;
          left: 25%;
          top: 30%;
          width: 50%;
-         height:50%;
+         height:60%;
          text-align: center;
          font-size: 18px;
          background-color:rgba(256,256,256,0.4);
@@ -18,28 +52,63 @@
      label{
          display: inline;
      }
+     ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: rgba(256,256,256,0);
+     }
+
+     li {
+         float: left;
+     }
+
+     li a {
+         display: block;
+         color: black;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-weight: bold;
+         font-size: 150%;
+     }
+
+     li a:hover {
+         color: white;
+     }
+
 
  </style>
 </head>
-<body class="background">
-<div>
-    <div>
-    <label>HOME</label>
-    </div>
-    <div>
-    <label>ABOUT US</label>
-    </div>
-</div>
-<div class="position">
-    <h1>ELECTION</h1>
-    <p>Coming Soon</p>
-    <div>
+<body>
 
-        <a  href="/users"><label>Team members</label></a>
-        <br>
-    </div>
 
-</div>
+        <nav>
+
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/users">MEMBER</a></li>
+                <li><a href="/">MAP</a></li>
+                <li><a href="/">ELECTION NEWS</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="position">
+            <span id="big">E</span><span id="small" style="color: white">lection</span>
+            <p style="color: white">Coming Soon</p>
+            <form>
+                <input type="text" value="Email" style="color:gainsboro; border-color: blue; ">
+                <input type="button" class="button disabled" value="Submit" >
+            </form>
+            <p style="color: white">A networking platform built for providing convenient voting experience</p>
+            <p style="color: white">Located your nearest polling station fast and easy</p>
+            <p style="color: white">finding your interested candidate just got easy</p>
+            <p style="color: white">several disabled mode available</p>
+
+
+        </div>
 
 
 

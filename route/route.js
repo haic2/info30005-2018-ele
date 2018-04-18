@@ -3,6 +3,13 @@ const router = express.Router();
 const controller = require('../controllers/controller');
 router.get('/',controller.index);
 router.get('/users',controller.usersAll);
-router.get('/users/:id',controller.fetch);
-
+router.get('/category',controller.category);
+router.get('/category/education',controller.education);
+router.get('/category/tax',controller.tax);
+router.get('/category/health',controller.health);
+router.get('/category/safety',controller.safety);
+router.get('/category/employment',controller.employment);
+router.get('/category/economy',controller.economy);
+router.get('/candidate',controller.candidate);
+router.get('/queueol',controller.queueol);
 module.exports = router;

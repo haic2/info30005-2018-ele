@@ -13,5 +13,13 @@
     "faker": "^4.1.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "\"# info30005-2018-ele\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haic2/info30005-2018-ele.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haic2/info30005-2018-ele/issues"
+  },
+  "homepage": "https://github.com/haic2/info30005-2018-ele#readme"
 }

@@ -1,18 +1,13 @@
 const faker = require('faker');
 
-const info = [
-    {
-        name:'Hai Chen',
-        age:'20'
-    },
-    {
-        name:'Zishuo Wang',
-        age:'21'
-    },
-    {
-        name:'Wang Biao',
-        age:'20'
-    }
-];
+const address = {
+    street_address: faker.address.streetAddress(),
+    secondary_address: faker.address.secondaryAddress(),
+    city:faker.address.city(),
+    number:faker.phone.phoneNumber(),
+    state : faker.address.state(),
 
-module.exports = info;
+};
+module.exports =address;
+
+;

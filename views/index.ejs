@@ -1,114 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
- <style>
-     .button {
-         background-color: blue;
-         color: white;
-         border: none;
-         padding: 4px 8px;
-         border-radius: 12px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-         font-size: 16px;
-         margin: 4px 2px;
-         transition-duration: 0.4s;
-         cursor: pointer;
-     }
-     .button:hover {
-         background-color: dodgerblue;
-         color: white;
-     }
-
-
-     body{
-         background-image: url("banner-bg.jpg" );
-         background-repeat: no-repeat;
-         background-size:110% 100%;
-         background-attachment: fixed;
-     }
-     #big{
-         font-family: cursive;
-         font-size: 500%;
-         color:blue;
-     }
-     #small{
-         font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-         font-size: 300%;
-
-     }
-
-     div.position{
-         position: absolute;
-         left: 25%;
-         top: 30%;
-         width: 50%;
-         height:60%;
-         text-align: center;
-         font-size: 18px;
-         background-color:rgba(256,256,256,0.4);
-     }
-     label{
-         display: inline;
-     }
-     ul {
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         background-color: rgba(256,256,256,0);
-     }
-
-     li {
-         float: left;
-     }
-
-     li a {
-         display: block;
-         color: black;
-         text-align: center;
-         padding: 14px 16px;
-         text-decoration: none;
-         font-weight: bold;
-         font-size: 150%;
-     }
-
-     li a:hover {
-         color: white;
-     }
-
-
- </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="navbar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+        <div class="dropbtn"> Policy
 
-        <nav>
+        </div>
+        <div class="dropdown-content">
+            <a href="/category">Browse by Category</a>
+            <a href="/candidate">Browse by Candidate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropbtn"> Ready to Vote
 
-            <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="/users">MEMBER</a></li>
-                <li><a href="/">MAP</a></li>
-                <li><a href="/">ELECTION NEWS</a></li>
+        </div>
+        <div class="dropdown-content">
+            <a href="/queueol">Queue Online</a>
+            <a href="#">Online Submission</a>
+            <a href="#">Find Polling Station</a>
+        </div>
+    </div>
+</div>
+<div class="rowtitle">
+    <h1>Welcome to Online Election</h1>
+</div>
 
-            </ul>
-        </nav>
+<div class="slideshow-container">
 
-        <div class="position">
-            <span id="big">E</span><span id="small" style="color: white">lection</span>
-            <p style="color: white">Coming Soon</p>
-            <form>
-                <input type="text" value="Email" style="color:gainsboro; border-color: blue; ">
-                <input type="button" class="button disabled" value="Submit" >
-            </form>
-            <p style="color: white">A networking platform built for providing convenient voting experience</p>
-            <p style="color: white">Located your nearest polling station fast and easy</p>
-            <p style="color: white">finding your interested candidate just got easy</p>
-            <p style="color: white">several disabled mode available</p>
+    <div class="mySlides fade style1">
+
+        <img src="lol.jpg">
+
+        <div class="text">Australia should learn from 'coherent, democratic' Azerbaijan election, says Liberal MP after state-sponsored visit</div>
+    </div>
+
+    <div class="mySlides fade style1">
+
+        <img src="picture2.jpg">
+
+        <div class="text">Coalition and Labor swap policies in bid to score votes ahead of 2019 election</div>
+    </div>
+
+    <div class="mySlides fade style1">
+        <img src="australia.jpg">
+
+        <div class="text">Final Results of the 2018 South Australian Election</div>
+    </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+</script>
+
+
+<div>
+        <div class="column middle">
+            <div class="middle-content">
+                <h4>Main Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            <div class="middle-content">
+                <h4>Main Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            <div class="middle-content">
+                <h4>Main Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            <div class="middle-content">
+                <h4>Main Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+            <div class="middle-content">
+                <h4>Main Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+            </div>
+
+        </div>
+        <div class="column side">
+            <div><h2>Place for Help</h2>
+                <p><%=address.secondary_address%></p>
+                <p><%=address.street_address%></p>
+                <p><%=address.city%></p>
+                <p><%=address.state%></p>
+            </div>
+            <div>
+                <h2>Or Call us</h2>
+                <p>number:<%=address.number%></p>
+
+            </div>
+            <div>
+                <button id="query">Online Equiry</button>
+
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form>
+                        <label for="name">Name: </label><br>
+                        <input type="text" id="name" placeholder="Your Name"><br>
+                        <label for="contact">Contacts</label><br>
+                        <input type="text" id="contact"placeholder="contact detail"><br>
+                        <label for="contact">Enquiry</label><br>
+                        <input type="text" id="querycontent" placeholder="Enter your Enquiry here"><br>
+                        <input id='form_sub' type="submit">
+                    </form>
+                </div>
+
+            </div>
+
+            <div>
+                <h2>Upcoming Election</h2>
+                <p><ul>Say YES to same sex marriage</ul></p>
+
+            </div>
+
 
 
         </div>
+
+</div>
+
+
+ <script>
+    // Get the modal
+    var modal = document.getElementById('modal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("query");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        console.log(modal);
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+</script>
 
 
 

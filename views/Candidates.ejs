@@ -1,216 +1,108 @@
-<!doctype html>
-
-
-
+<!DOCTYPE html>
+<html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Election</title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" type="image/png" href="images/government.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet"  href="style.css"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="style1.css">
-    
+    <link rel="stylesheet" href="../stylesheet.css">
+
+
 </head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Explore
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../category">Browse by policy category</a>
+                    <a class="dropdown-item" href="../candidate">Browse by candidate</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Voting
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../queueol">Queue Online</a>
+                    <a class="dropdown-item" href="#">Find Polling Stations</a>
+                </div>
+            </li>
 
-<body class="about">
-<div class="navbar">
-    <a href="/">Home</a>
-    <div class="dropdown">
-        <div class="dropbtn"> Policy
-
-        </div>
-        <div class="dropdown-content">
-            <a href="/category">Browse by Category</a>
-            <a href="/candidate">Browse by Candidate</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <div class="dropbtn"> Ready to Vote
-
-        </div>
-        <div class="dropdown-content">
-            <a href="/queueol">Queue Online</a>
-            <a href="#">Online Submission</a>
-            <a href="#">Find Polling Station</a>
-        </div>
-    </div>
-    <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </form>
     </div>
+</nav>
+
+
+<div class="title">
+    <h1>Candidates And Parties</h1>
 </div>
 
-<div class="rowtitle">
-	<h1>BROWSE BY CANDIDATES</h1>
-</div>
-<!-- / Site Header -->
+<div class="grid-containertwo">
+    <div class="item1">
+        <div class="breadcrumbs">
+            <div><a href="/">Home</a>/</div>
+            <div><a href="/candidate">Candidate</a>/</div>
 
-<!-- \ Site Header -->
-
-<!-- / Site Main -->
-<div class="site-main">
-    <div class="inner clearfix">
-
-        <h2>Parties of Australia</h2>
-        <p class="desc"> select a party to view their
-            candidates</p>
-
-        <!-- / Services Widget -->
-        <div class="widget services">
-            <div class="row">
-                <div class="col-md-4 list clearfix">
-                    <img src="images/labor.png" />
-                    <p class="sub-title">Labor party</p>
-                    <p class="link"><a href="#">View all candidates</a></p>
-                </div>
-                <div class="col-md-4 list clearfix">
-                    <img src="images/liberal_emblem.png" />
-                    <p class="sub-title">Liberal Party</p>
-                    <p class="link"><a href="#">View all candidates</a></p>
-                </div>
-                <div class="col-md-4 list clearfix">
-                    <img src="images/green.png" />
-                    <p class="sub-title">Australian Greens</p>
-                    <p class="link"><a href="#">View all candidates</a></p>
-                </div>
-            </div>
         </div>
-        <!-- \ Services Widget -->
+    </div>
 
+    <div class="accordion">
+        <%for(var i in candidates){%>
 
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapse<%=i%>">
+                    <div class="grid-containerthree">
+                        <div><img class="profile" src="<%=candidates[i].profile%>" alt="<%=candidates[i].name%>" ></div>
 
-        <!-- / Staff Widget -->
-        <div class="widget staff">
-            <h3 class="title">Most popular candidates</h3>
-            <p class="desc"> Top 3 candidates according to opinion poll </p>
-
-            <div class="row">
-                <div class="col-md-4 list clearfix">
-                    <p class="image"><img src="images/RDN_green.jpg" class="img-circle"></p>
-                    <p class="name">Richard Di Natale</p>
-                    <p class="role">Leader of Australian Greens</p>
-                    <p class="links">
-                        <a href=""><i class="pe-so-dribbble pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-instagram pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-deviantart-2 pe-lg pe-va"></i></a>
-                    </p>
-                </div>
-                <div class="col-md-4 list clearfix">
-                    <p class="image"><img src="images/JB_liberal.jpg" class="img-circle"></p>
-                    <p class="name">Julie Bishop</p>
-                    <p class="role">Minister for Foreign Affairs</p>
-                    <p class="links">
-                        <a href=""><i class="pe-so-dribbble pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-drupal pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-twitter pe-lg pe-va"></i></a>
-                    </p>
-                </div>
-                <div class="col-md-4 list clearfix">
-                    <p class="image"><img src="images/Turnbull_liberal.jpg" class="img-circle"></p>
-                    <p class="name">Turnbull</p>
-                    <p class="role">Prime minister</p>
-                    <p class="links">
-                        <a href=""><i class="pe-so-dribbble pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-forrst pe-lg pe-va"></i></a>
-                        <a href=""><i class="pe-so-github pe-lg pe-va"></i></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- \ Staff Widget -->
-
-
-        <!-- / Testimonials Widget -->
-
-        <div class="widget testimonials">
-
-
-
-
-            <h3 class="title">All Candidates</h3>
-
-            <p class="desc"></p>
-
-            <div id="carousel-example-generic" class="carousel slide">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <!-- Slide -->
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="image"><img src="images/staff1.jpg" class="img-circle"></p>
-                                <p class="msg">
-                                    <span class="quote left">"</span>
-                                    Candidates's slogan
-                                    <span class="quote right">"</span>
-                                </p>
-                                <p class="name">Candidate's Name</p>
-                                <p class="date">Candidate's party</p>
-                                <p class="date">Position</p>
-                            </div>
+                        <div>
+                            <h5>Name: <%= candidates[i].name %></h5>
+                            <h5>Party: <%= candidates[i].Party %></h5>
+                            <h5>Gender: <%= candidates[i].gender %></h5>
+                            <h5>Category: <%= candidates[i].category %></h5>
                         </div>
                     </div>
-                    <!-- Slide -->
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="image"><img src="images/staff2.jpg" class="img-circle"></p>
-                                <p class="msg">
-                                    <span class="quote left">"</span>
-                                    Candidates's slogan
-                                    <span class="quote right">"</span>
-                                </p>
-                                <p class="name">Candidate's Name</p>
-                                <p class="date">Candidate's Party</p>
-                                <p class="date">Position</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
 
-
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
+            <div id="collapse<%=i%>" class="collapse" data-parent="#accordion">
+                <div class="card-body desc1">
+                    <h5>Description:</h5>
+                    <p><%= candidates[i].description %></p>
+                </div>
+            </div>
         </div>
-        <!-- \ Testimonials Widget -->
-
-
+        <%}%>
 
     </div>
+
+
+
+
+
 </div>
-<!-- \ Site Main -->
 
 
 
-<!-- / JS Files  -->
-
-<!-- jQuery -->
-<script src="js/jQuery/jquery-2.1.1.js"></script>
-
-<!-- Theme Functions -->
-<script src="js/functions.js"></script>
-
-<!-- Bootstrap -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
-
-<!-- \ JS Files  -->
+<footer class="footer">
+    <p>&copy; 2018 Team about:blank.</p>
+</footer>
 
 
 </body>

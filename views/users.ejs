@@ -2,23 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Team Member</title>
+    <link rel="stylesheet" href='../../public/css/bootstrap.css'>
+    <link rel="stylesheet" href='../public/css/stylesheet.css'>
+    <title>Enqueue Successful</title>
 </head>
 <body>
-<h1>Team about:blank</h1>
-<br>
-<div>
-    <a  href="/users/0"><label>Hai Chen</label></a>
-</div>
-<br>
-<div>
-    <a  href="/users/1"><label>Zishuo Wang</label></a>
-</div>
-<br>
-<div>
-    <a  href="/users/2"><label>Biao Wang</label></a>
-</div>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
 
-<input type="button" onclick="location.href='/';" value="back"/>
+            </ul>
+        </nav>
+        <h3 class="text-muted">QueueOnline</h3>
+    </div>
+
+
+    <div class="row">
+        <h3>Congratulations!</h3><br>
+        <h6>You have entered the queue for booth: <%body.bname%></h6><br>
+
+        <h6>You have <%%> people in front</h6>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2018 Team about:blank.</p>
+    </footer>
+
+</div> <!-- /container -->
+
 </body>
 </html>

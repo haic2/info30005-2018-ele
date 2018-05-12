@@ -1,33 +1,50 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../stylesheet.css">
+    </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<div class="navbar">
-    <a href="/">Home</a>
-    <div class="dropdown">
-        <div class="dropbtn"> Policy
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
 
-        </div>
-        <div class="dropdown-content">
-            <a href="/category">Browse by Category</a>
-            <a href="/candidate">Browse by Candidate</a>
-        </div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Explore
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../category">Browse by policy category</a>
+                    <a class="dropdown-item" href="../candidate">Browse by candidate</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Voting
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../queueol">Queue Online</a>
+                    <a class="dropdown-item" href="#">Find Polling Stations</a>
+                </div>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
     </div>
-    <div class="dropdown">
-        <div class="dropbtn"> Ready to Vote
-
-        </div>
-        <div class="dropdown-content">
-            <a href="/queueol">Queue Online</a>
-            <a href="#">Online Submission</a>
-            <a href="#">Find Polling Station</a>
-        </div>
-    </div>
-</div>
-<div class="rowtitle">
+</nav>
+<div class="title">
     <h1>Welcome to Online Election</h1>
 </div>
 

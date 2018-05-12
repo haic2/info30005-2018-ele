@@ -1,5 +1,6 @@
 const faker = require('faker');
 
+
 const address = {
     street_address: faker.address.streetAddress(),
     secondary_address: faker.address.secondaryAddress(),
@@ -8,6 +9,6 @@ const address = {
     state : faker.address.state(),
 
 };
+
 module.exports =address;
 
-;

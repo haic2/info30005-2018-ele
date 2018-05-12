@@ -1,15 +1,36 @@
-const express = require('express');
-const router = express.Router();
-const controller = require('../controllers/controller');
+var express = require('express');
+var router = express.Router();
+var controller = require('../controllers/controller');
+var Queue = require('../models/queue');
+
 router.get('/',controller.index);
-router.get('/users',controller.usersAll);
+
 router.get('/category',controller.category);
-router.get('/category/education',controller.education);
-router.get('/category/tax',controller.tax);
-router.get('/category/health',controller.health);
-router.get('/category/safety',controller.safety);
-router.get('/category/employment',controller.employment);
-router.get('/category/economy',controller.economy);
-router.get('/candidate',controller.candidate);
+
+
+router.get('/category/education',controller.getedu);
+router.get('/category/economy',controller.geteco);
+router.get('/category/employment',controller.getemp);
+router.get('/category/health',controller.gethea);
+router.get('/category/tax',controller.gettax);
+router.get('/category/safety',controller.getsaf);
+router.get('/candidate',controller.getcand);
+
+
+
 router.get('/queueol',controller.queueol);
+router.get('/users', controller.usersAll);
+
+router.post('/api',controller.createCandidate);
+router.get('/api',controller.findAllCandidates);
+router.get('/api/:id',controller.findOneCandidate);
+
+router.post('/booth',controller.addbooth);
+router.get('/booth',controller.findAllbooths);
+router.get('/booth/:id',controller.findOnebooth);
+router.get('/category/education',controller.getedu);
+router.get('/failed', controller.failed);
+
+router.post('/queueol', controller.enqueue);
+
 module.exports = router;

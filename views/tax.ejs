@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href='../../public/css/bootstrap.css'>
+    <link rel="stylesheet" href='../public/css/stylesheet.css'>
+    <link rel="stylesheet" href="../stylesheet.css">
+
+
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<div class="navbar">
-    <a href="/">Home</a>
-    <div class="dropdown">
-        <ul class="dropbtn"> Policy
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Explore
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../category">Browse by policy category</a>
+                    <a class="dropdown-item" href="../candidate">Browse by candidate</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Voting
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../queueol">Queue Online</a>
+                    <a class="dropdown-item" href="#">Find Polling Stations</a>
+                </div>
+            </li>
+
         </ul>
-        <div class="dropdown-content">
-            <a href="../category">Browse by Category</a>
-            <a href="../candidate">Browse by Candidate</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <ul class="dropbtn"> Ready to Vote
-        </ul>
-        <div class="dropdown-content">
-            <a href="../queueol">Queue Online</a>
-            <a href="#">Online Submission</a>
-            <a href="#">Find Polling Station</a>
-        </div>
-    </div>
-    <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </form>
     </div>
-</div>
+</nav>
 
-<div class="rowtitle">
-    <h1>Tax</h1>
-</div>
 
-<div class="tools">
-    <div>
-        <h3>Tools
-        </h3>
-        <a href="#">Listen</a>
-    </div>
+<div class="title">
+    <h1>Tax Policies</h1>
 </div>
 
 <div class="grid-containertwo">
@@ -52,65 +61,43 @@
             <div><a href="/category">Category</a>/</div>
             <div><a href="/category/tax">Tax</a></div>
         </div>
-        <div>
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
 
     </div>
 
-    <div class="item2">
+    <div class="accordion">
         <div>
-            <a href="#"><h5>Government school LBOTE students by English spoken at home, August 2007-2017 Popular</h5></a>
-            <p>The full-time equivalent of Government School student enrolments who have a Language Background Other Than English (LBOTE) and whether English is spoken at home.</p>
+            <h2></h2>
         </div>
-    </div>
+        <%for(var i in policies){%>
 
-    <div class="item2">
-        <div>
-            <a href="#"><h5>Government school LBOTE students by English spoken at home, August 2007-2017 Popular</h5></a>
-            <p>The full-time equivalent of Government School student enrolments who have a Language Background Other Than English (LBOTE) and whether English is spoken at home.</p>
+        <%if(policies[i].category=="tax"){%>
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapse<%=i%>">
+                    <h5><%= policies[i].title %>------<%= policies[i].state %></h5>
+
+                </a>
+            </div>
+            <div id="collapse<%=i%>" class="collapse" data-parent="#accordion">
+                <div class="card-body desc1">
+
+                    <h5>The policy maker:</h5> <p><%= policies[i].policymaker %></p>
+                    <h5>Description:</h5><p> <%= policies[i].description %></p>
+                </div>
+            </div>
         </div>
-    </div>
+        <%}%>
+        <%}%>
 
-    <div class="item2">
-        <div>
-            <a href="#"><h5>Government school LBOTE students by English spoken at home, August 2007-2017 Popular</h5></a>
-            <p>The full-time equivalent of Government School student enrolments who have a Language Background Other Than English (LBOTE) and whether English is spoken at home.</p>
-        </div>
     </div>
-
-    <div class="item2">
-        <div>
-            <a href="#"><h5>Government school LBOTE students by English spoken at home, August 2007-2017 Popular</h5></a>
-            <p>The full-time equivalent of Government School student enrolments who have a Language Background Other Than English (LBOTE) and whether English is spoken at home.</p>
-        </div>
-    </div>
-
-    <div class="item2">
-        <div>
-            <a href="#"><h5>Government school LBOTE students by English spoken at home, August 2007-2017 Popular</h5></a>
-            <p>The full-time equivalent of Government School student enrolments who have a Language Background Other Than English (LBOTE) and whether English is spoken at home.</p>
-        </div>
-    </div>
-
 </div>
 
 
 
-<div class="tail">
-    <div class="tail1">
-        <a href="#">ABOUT US</a>
-    </div>
-    <div class="tail2">
-        <a href="#">TERM OF USE</a>
-    </div>
-    <div class="tail3">
-        <a href="#">CONTACT</a>
-    </div>
-</div>
+<footer class="footer">
+    <p>&copy; 2018 Team about:blank.</p>
+</footer>
+
 
 </body>
 </html>

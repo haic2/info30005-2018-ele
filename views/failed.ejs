@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='../../public/css/bootstrap.css'>
+    <link rel="stylesheet" href='../public/css/stylesheet.css'>
+    <title>Enqueue Successful</title>
+</head>
+<body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
+
+            </ul>
+        </nav>
+        <h3 class="text-muted">QueueOnline</h3>
+    </div>
+
+
+    <div class="row">
+        <h3>Sorry!</h3><br>
+        <h6>Seems you have already entered the queue for booth: <%=body.bname%></h6><br>
+        <h6>Using ID: <%=body.idno%></h6>
+        <h6>You have <%%> people in front</h6>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2018 Team about:blank.</p>
+    </footer>
+
+</div> <!-- /container -->
+
+</body>
+</html>

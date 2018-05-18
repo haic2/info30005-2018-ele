@@ -21,11 +21,11 @@
     </div>
 
     <%if(errors){%>
-        <%for(var error in errors){%>
-        <div class="alert alert-danger"><%error.msg%></div>
+        <%for(var i in errors){%>
+        <div class="alert alert-danger"><%=errors[i].msg%></div>
         <%}%>
-
     <%}%>
+
     <div class="row">
         <div class="col-lg-12">
             <form method="post" action='/queueol'>

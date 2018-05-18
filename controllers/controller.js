@@ -125,14 +125,15 @@ module.exports.enqueue = function(req, res){
 
         var data = {fname:fname, lname:lname, idno:idno, bname:bname};
 
-        req.checkBody("fname", 'First name is required').notEmpty();
+        req.checkBody('fname', 'First name is required').notEmpty();
         req.checkBody("lname", 'Last name is required').notEmpty();
         req.checkBody("idno", 'Personal Identification is required').notEmpty();
         req.checkBody("bname", 'Specifiy a booth is required').notEmpty();
 
         var errors = req.validationErrors();
 
-        if (errors){
+        if (typeof errors !== undefined){
+            console.log(errors);
             res.render('readytoVote',{errors: errors});
         }else {
             var newQueue = new Queue({
@@ -149,7 +150,7 @@ module.exports.enqueue = function(req, res){
                     }
                 }
                 else {
-                    console.log(data)
+                    console.log(data);
                     res.render('users',{body: data});
                 }
 

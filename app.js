@@ -7,8 +7,6 @@ var cookieParser = require('cookie-parser');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
-var passport = require('passport');
-var LocalStrategy = require('passport-local'), Strategy;
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -23,8 +21,7 @@ app.use(session({
     saveUninitialized:true,
     resave:true
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+
 //Express Validator
 app.use(expressValidator({
     errorFormatter:function (param,msg,value){

@@ -3,66 +3,76 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="../stylesheet.css">
 
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/animate.css">
+    <link rel="stylesheet" href="../public/css/magnific-popup.css">
+    <link rel="stylesheet" href="../public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="../public/css/style.css">
+
+    <title>Online Election Assistant</title>
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="navbar custom-navbar" role="navigation">
+    <div class="container">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-            </li>
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <!-- lOGO TEXT HERE -->
+            <a href="/" class="navbar-brand">VoteAsst.</a>
+        </div>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Explore
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../category">Browse by policy category</a>
-                    <a class="dropdown-item" href="../candidate">Browse by candidate</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Voting
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../queueol">Queue Online</a>
-                    <a class="dropdown-item" href="#">Find Polling Stations</a>
-                </div>
-            </li>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Catalogue
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../category">Browse by category</a><br>
+                        <a class="dropdown-item" href="../candidate">Browse by candidate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Voting
+                    </a>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" href="../queueol">Queue Online</a><br>
+                        <a class="dropdown-item" href="../station">Find Polling Stations</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-        </form>
     </div>
-</nav>
-
 
 <div class="title">
     <h1>Candidates And Parties</h1>
 </div>
 
-<div class="grid-containertwo">
+<div class="grid-containertwo2">
     <div class="item1">
         <div class="breadcrumbs">
             <div><a href="/">Home</a>/</div>
             <div><a href="/candidate">Candidate</a>/</div>
-
         </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" type="search" placeholder="Search by name" aria-label="Search">
+        </form>
     </div>
 
-    <div class="accordion">
+    <div class="accordion"  id="myUL">
         <%for(var i in candidates){%>
 
         <div class="card">
@@ -70,12 +80,11 @@
                 <a class="card-link" data-toggle="collapse" href="#collapse<%=i%>">
                     <div class="grid-containerthree">
                         <div><img class="profile" src="<%=candidates[i].profile%>" alt="<%=candidates[i].name%>" ></div>
-
                         <div>
-                            <h5>Name: <%= candidates[i].name %></h5>
-                            <h5>Party: <%= candidates[i].Party %></h5>
-                            <h5>Gender: <%= candidates[i].gender %></h5>
-                            <h5>Category: <%= candidates[i].category %></h5>
+                            <h4 class="name">Name: <%= candidates[i].name %></h4>
+                            <h4>Party: <%= candidates[i].Party %></h4>
+                            <h4>Gender: <%= candidates[i].gender %></h4>
+                            <h4>Category: <%= candidates[i].category %></h4>
                         </div>
                     </div>
                 </a>
@@ -100,10 +109,44 @@
 
 
 
-<footer class="footer">
-    <p>&copy; 2018 Team about:blank.</p>
-</footer>
 
+<div class="title">
+    <p>&copy; 2018 Team about:blank.</p>
+</div>
+
+
+
+
+
+<script>
+    function myFunction() {
+        var input, filter, ul, name, a, i, picts,classs;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        classs = document.getElementById("myUL");
+        name = classs.getElementsByClassName("name");
+        h4 = classs.getElementsByClassName("grid-containerthree");
+        picts = classs.getElementsByTagName("img");
+        for (i = 0; i < name.length; i++) {
+            a = name[i];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                h4[i].style.display = "";
+                picts[i].style.display = "";
+            } else {
+                h4[i].style.display = "none";
+
+
+                picts[i].style.display = "none";
+
+            }
+        }
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="../public/js/jquery.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
 
 </body>
 </html>

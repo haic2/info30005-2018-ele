@@ -24,14 +24,43 @@
 
     }
 .title{
-    background-image: url("../fon-blue.jpg" );
+    background-color: white;
     margin:0;
     border:0;
     padding:30px;
     text-align: center;
     letter-spacing: 3px;
     color:white;
+    border-top: 2px solid #f2f2f2;
+
 }
+    .procedure{
+        margin-bottom: 7vh;
+    }
+.procedure  h2{
+    margin-bottom: 9vh;
+    font-size: 26px;
+}
+
+
+.procedure1{
+    margin-left: 25%;
+    font-size: 25px;
+    border-radius: 50px;
+}
+    #map{
+        height:74vh;
+        width: 60%;
+    }
+    .sty{
+        font-size: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom:2px solid #f2f2f2;
+    }
+    .page{
+        margin-left: 45%;
+    }
 .grid-container{
             display: grid;
             grid-template-columns: 300px 300px 300px;
@@ -56,6 +85,14 @@
             padding: 10px;
             justify-content: center;
         }
+    .grid-containertwo2 {
+        display: grid;
+        grid-template-columns: 300px 600px;
+        grid-template-rows: 4000px;
+        grid-gap: 0px;
+        padding: 10px;
+        justify-content: center;
+    }
 
         .grid-containertwo > div {
             font-size: 30px;
@@ -77,14 +114,10 @@
             height:200px;
         }
         .desc{
-            font-family: Arial, Helvetica, sans-serif;
-            color:royalblue;
             text-decoration: none;
-            margin:0;
-            border:0;
-            padding: 0;
+
             text-align: center;
-            font-size: medium;
+            font-size: 20px;
         }
 .profile{
     width: 100px;

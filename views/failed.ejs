@@ -3,35 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href='../../public/css/bootstrap.css'>
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href='../public/css/stylesheet.css'>
-    <title>Enqueue Successful</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Enqueue Unsuccessful</title>
 </head>
 <body>
 <div class="container">
     <div class="header clearfix">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="/">Home</a></li>
+        <div class="navbar custom-navbar" role="navigation">
+            <div class="container">
 
-            </ul>
-        </nav>
-        <h3 class="text-muted">QueueOnline</h3>
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                    </button>
+                    <!-- lOGO TEXT HERE -->
+                    <a href="/" class="navbar-brand">VoteAsst.</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Catalogue
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="../category">Browse by category</a><br>
+                                <a class="dropdown-item" href="../candidate">Browse by candidate</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Voting
+                            </a>
+                            <div class="dropdown-menu" >
+                                <a class="dropdown-item" href="../queueol">Queue Online</a><br>
+                                <a class="dropdown-item" href="../station">Find Polling Stations</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 
-    <div class="row">
-        <h3>Sorry!</h3><br>
-        <h6>Seems you have already entered the queue for booth: <%=body.bname%></h6><br>
-        <h6>Using ID: <%=body.idno%></h6>
-        <h6>You have <%%> people in front</h6>
+    <div class="container">
+        <h2>Sorry!</h2><br>
+        <h4>Seems you have already entered the queue for station at: <%=body.bname%></h4>
+        <h4>At time: <%=body.etime%></h4>
+        <h4>Using ID: <%=body.idno%></h4>
+        <h4>You have <div id="frontnum"><%=front%></div> people in front</h4>
 
     </div>
-
-    <footer class="footer">
+    <div class="footer">
         <p>&copy; 2018 Team about:blank.</p>
-    </footer>
+    </div>
 
-</div> <!-- /container -->
 
+
+
+</div>
+
+<script src="../public/js/jquery.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
 </body>
 </html>

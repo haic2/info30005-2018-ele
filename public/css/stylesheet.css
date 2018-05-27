@@ -84,3 +84,11 @@ body {
 footer{
       margin-top: 40px;
   }
+
+.multi-enqueue{
+    font-size:15px;
+}
+#frontnum{
+    display:inline;
+    color:red;
+}

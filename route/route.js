@@ -4,8 +4,9 @@ var controller = require('../controllers/controller');
 var Queue = require('../models/queue');
 
 router.get('/',controller.index);
-
+router.post('/', controller.query);
 router.get('/category',controller.category);
+router.get('/station',controller.getbooth);
 
 
 router.get('/category/education',controller.getedu);
@@ -21,13 +22,7 @@ router.get('/candidate',controller.getcand);
 router.get('/queueol',controller.queueol);
 router.get('/users', controller.usersAll);
 
-router.post('/api',controller.createCandidate);
-router.get('/api',controller.findAllCandidates);
-router.get('/api/:id',controller.findOneCandidate);
 
-router.post('/booth',controller.addbooth);
-router.get('/booth',controller.findAllbooths);
-router.get('/booth/:id',controller.findOnebooth);
 router.get('/category/education',controller.getedu);
 router.get('/failed', controller.failed);
 

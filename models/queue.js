@@ -9,7 +9,8 @@ var queueSchema = mongoose.Schema(
             type:String,
             unique:true
         },
-        "bname":String
+        "bname":String,
+        "time": Date
     }
 );
 var queue =  mongoose.model('queue',queueSchema);
